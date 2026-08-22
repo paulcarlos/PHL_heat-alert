@@ -1,0 +1,47 @@
+"station","thr_95p","thr_25pct","thr_mob","thr_mars","thr_prim","clust"
+"Baler",42,42,44,48,45,1
+"Borongan",40,41,40,44,43,1
+"Calapan",43,43,41,44,42,1
+"Casiguran",43,44,37,52,44,1
+"Catarman",43,43,44,49,42,1
+"Catbalogan",43,43,44,45,44,1
+"Clark Airport",42,42,43,48,39,1
+"CLSU Muñoz",44,45,45,42,50,1
+"Cotabato City",41,43,43,45,43,1
+"Cubi Pt. Subic Bay",42,41,42,45,44,1
+"Davao City",42,43,44,44,45,1
+"Dipolog",43,43,44,46,44,1
+"Dumaguete City",41,41,42,42,41,1
+"General Santos City",43,43,44,47,46,1
+"Hinatuan",41,42,43,42,43,1
+"Iba",44,44,42,46,46,1
+"Infanta",43,43,44,49,45,1
+"Laoag City",44,44,42,47,44,1
+"Legazpi City",44,44,44,48,46,1
+"Maasin",42,44,44,49,46,1
+"Mactan International Airport",42,41,42,49,43,1
+"Masbate City",44,44,41,46,43,1
+"NAIA Pasay City",43,43,43,47,43,1
+"Port Area",42,42,43,47,44,1
+"Puerto Princesa City",42,42,42,45,43,1
+"Romblon City",41,41,41,44,42,1
+"Roxas City",44,43,43,44,43,1
+"Science Garden Quezon City",40,42,43,47,44,1
+"Sinait",41,41,40,45,42,1
+"Surigao City",42,42,43,45,44,1
+"Tacloban City",42,42,42,43,43,1
+"Tayabas City",41,41,42,42,42,1
+"Zamboanga City",43,43,43,48,43,1
+"Alabat",43,43,44,52,45,2
+"Ambulong",47,46,48,53,48,2
+"Aparri",46,45,45,48,47,2
+"Butuan City",45,44,45,52,46,2
+"Daet",50,48,52,55,49,2
+"Dagupan City",49,47,49,55,50,2
+"Guiuan",44,44,47,53,46,2
+"Sangley Point",45,47,48,53,48,2
+"Tuguegarao City",45,45,45,51,49,2
+"Virac",45,45,47,46,47,2
+"Malaybalay",38,39,40,36,34,3
+"Tanay",33,34,34,37,36,3
+"Baguio City",27,28,27,27,29,4
