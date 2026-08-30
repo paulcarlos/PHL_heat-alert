@@ -92,7 +92,7 @@ for (i in 1:nrow(df)) {
   # Model-based Recursive Partitioning (MOB)
   mb <- mobcon
   for (b in 1:nrow(mb)) {
-    mobtr1 <- glmtree(lmort ~ year + ns(dos,df=3) | hi, data=sdat, family = quasipoisson(),
+    mobtr1 <- glmtree(all ~ year + ns(dos,df=3) | hi, data=sdat, family = quasipoisson(),
                       alpha=mb$alpha[b], bonferroni=FALSE, trim=mb$trim[b],  restart=FALSE, numsplit="left")
     nodepath1 <- partykit:::.list.rules.party(mobtr1)
     inner_path1 <- unlist(strsplit(nodepath1, " & "))
@@ -111,7 +111,7 @@ for (i in 1:nrow(df)) {
   ms$val <- NA
   for (b in 1:nrow(marscon)) {
     #b=1
-    marsfit1 <- earth(lmort ~ hi + year + ns(dos,df=3), data = sdat, glm = list(family = "quasipoisson"), pmethod="backward",
+    marsfit1 <- earth(all ~ hi + year + ns(dos,df=3), data = sdat, glm = list(family = "quasipoisson"), pmethod="backward",
                       endspan = ms$endspan[b], thresh=ms$thres[b], nk=ms$nk[b], degree=ms$deg[b])
     marsv <- c(marsfit1$cuts[,"hi"])
     ms$val[b] <- round(max(marsv,na.rm=TRUE))
@@ -123,7 +123,7 @@ for (i in 1:nrow(df)) {
   
   
   # Patient Rule-Induction Method (PRIM)
-  peelres <- peeling(sdat$lmort, sdat$hi, 
+  peelres <- peeling(sdat$all, sdat$hi, 
                      beta.stop = 10/nrow(sdat), peeling.side = -1,
                      obj.fun = function(y, x, inbox){
                        y <- y[inbox]
