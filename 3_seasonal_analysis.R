@@ -52,9 +52,6 @@ for (i in 1:nrow(mpred)) {
   d1 <- d1[!grepl(paste0("2014-",sprintf("%02d",1:11),collapse="|"),d1$date),]
   d1$strat <- factor(factor(d1$year):factor(d1$month):factor(d1$dow))
   
-  # lag mortality
-  d1$lagall <- zoo::rollapply(data=d1$all,width=lagd+1,FUN="mean",align="right",fill=NA,partial=TRUE)
-  
   # subset seasons
   dmam <- d1[d1$month %in% mam,]
   dmam$dos <- unname(unlist(tapply(dmam$date,dmam$year,function(z)1:length(z))))
@@ -68,17 +65,17 @@ for (i in 1:nrow(mpred)) {
   
   # keep
   dmam$keep <- FALSE
-  str1 <- aggregate(lagall~strat,data=dmam,FUN="sum")
-  dmam$keep[dmam$strat%in%str1$strat[str1$lagall>0]] <- TRUE
+  str1 <- aggregate(all~strat,data=dmam,FUN="sum")
+  dmam$keep[dmam$strat%in%str1$strat[str1$all>0]] <- TRUE
   djja$keep <- FALSE
-  str1 <- aggregate(lagall~strat,data=djja,FUN="sum")
-  djja$keep[djja$strat%in%str1$strat[str1$lagall>0]] <- TRUE
+  str1 <- aggregate(all~strat,data=djja,FUN="sum")
+  djja$keep[djja$strat%in%str1$strat[str1$all>0]] <- TRUE
   dson$keep <- FALSE
-  str1 <- aggregate(lagall~strat,data=dson,FUN="sum")
-  dson$keep[dson$strat%in%str1$strat[str1$lagall>0]] <- TRUE
+  str1 <- aggregate(all~strat,data=dson,FUN="sum")
+  dson$keep[dson$strat%in%str1$strat[str1$all>0]] <- TRUE
   ddjf$keep <- FALSE
-  str1 <- aggregate(lagall~strat,data=ddjf,FUN="sum")
-  ddjf$keep[ddjf$strat%in%str1$strat[str1$lagall>0]] <- TRUE
+  str1 <- aggregate(all~strat,data=ddjf,FUN="sum")
+  ddjf$keep[ddjf$strat%in%str1$strat[str1$all>0]] <- TRUE
   
   # crossbasis
   cbh_mam <- crossbasis(dmam$heatindex,lag=lagd,
