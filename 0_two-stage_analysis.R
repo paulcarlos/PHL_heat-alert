@@ -56,9 +56,6 @@ for (i in 1:nrow(mpred)) {
   d1 <- dat[dat$station==s1,]
   d1$strat <- factor(factor(d1$year):factor(d1$month):factor(d1$dow))
   
-  # lag mortality
-  d1$lagall <- zoo::rollapply(data=d1$all,width=lagd+1,FUN="mean",align="right",fill=NA,partial=TRUE)
-  
   # subset MAM
   sdat <- d1[d1$month%in%mo,]
   
